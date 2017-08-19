@@ -1,0 +1,7 @@
+AI Navigation Game
+
+For the first 20 cycles (i.e. asteroids passing across the screen) the script guesses random locations for the "ship" to jump to, then records the success rates of the guessed positions in the "configuration success" chart displayed below. Each number in the chart stands for 1) asteroid position 2) initial ship position and 3) position that the ship will move to. Every time the ship is hit, the corresponding configuration's "success value" is decreased by 2, whereas if the ship misses the asteroid, the corresponding configuration's "success value" is increased by one. This means that if a configuration is only sometimes successful, it will eventually give way to more successful configurations once the AI kicks in.
+
+After 20 cycles, the AI kicks in. It starts with a random goal for the ship to try and then compares the "success values" for all other configurations with the same initial two digits. So, for instance, if the randomly-set goal of the ship is "quadrant 4" (the screen is divided into 4 quadrants, and the randomly-assigned goal value will be between 1 and 4) and the ship's current position is in quadrant 1, and the asteroid is in quadrant 2 (configuration value of 214) then the AI will compare the success rate of the randomly guessed configuration with those of all other 21x configurations to see which one most frequently results in a miss.
+
+100% success is generally achieved after 40 cycles.
