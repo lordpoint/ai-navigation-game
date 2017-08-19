@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Template</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
+
+</head>
+  <body>
+
+  <section class="scene">
+    <div class="zone zone_1">ONE</div>
+    <div class="zone zone_2">TWO</div>
+    <div class="zone zone_3">THREE</div>
+    <div class="zone zone_4">FOUR</div>
+    <div id="ai"></div>
+    <div id="asteroid"></div>
+    <div id="trainingCountdown">
+      <h3 id="trainingHeader">Training</h3>
+      <h1 id="cyclesRemaining">20</h1>
+      <h5 id="trainingDetail">More cycles</h5>
+    </div>
+  </section>
+
+  <section id="stats">
+    <span>Cycles <span id="cyclesCount">1</span></span>
+    <span>Hits <span id="hitCount">0</span></span>
+    <span>Misses <span id="avoidCount">0</span></span>
+    <span>Average <span id="average">0</span></span>
+
+    <span>Trying <span id="trying">0</span></span>
+    <span>Ship Quad <span id="aiQuad">0</span></span>
+    <span>Asteroid Quad <span id="asteroidQuad">0</span></span>
+  </section>
+
+  <section class="controls">
+    <button id="startStop" onclick="startStop()">Start</button>
+    <button id="showZones" onClick="showZones()">Show Zones</button>
+    <button id="chartToggle" onclick="chartToggle()">Show Graph</button>
+  </section>
+
+  <section class="data">
+    <table>
+      <tr>
+        <th id="111">111</th>
+        <th id="112">112</th>
+        <th id="113">113</th>
+        <th id="114">114</th>
+        <th id="121">121</th>
+        <th id="122">122</th>
+        <th id="123">123</th>
+        <th id="124">124</th>
+        <th id="131">131</th>
+        <th id="132">132</th>
+        <th id="133">133</th>
+        <th id="134">134</th>
+        <th id="141">141</th>
+        <th id="142">142</th>
+        <th id="143">143</th>
+        <th id="144">144</th>
+      </tr>
+      <tr>
+        <td id="succ_111">0</td>
+        <td id="succ_112">0</td>
+        <td id="succ_113">0</td>
+        <td id="succ_114">0</td>
+        <td id="succ_121">0</td>
+        <td id="succ_122">0</td>
+        <td id="succ_123">0</td>
+        <td id="succ_124">0</td>
+        <td id="succ_131">0</td>
+        <td id="succ_132">0</td>
+        <td id="succ_133">0</td>
+        <td id="succ_134">0</td>
+        <td id="succ_141">0</td>
+        <td id="succ_142">0</td>
+        <td id="succ_143">0</td>
+        <td id="succ_144">0</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th id="211">211</th>
+        <th id="212">212</th>
+        <th id="213">213</th>
+        <th id="214">214</th>
+        <th id="221">221</th>
+        <th id="222">222</th>
+        <th id="223">223</th>
+        <th id="224">224</th>
+        <th id="231">231</th>
+        <th id="232">232</th>
+        <th id="233">233</th>
+        <th id="234">234</th>
+        <th id="241">241</th>
+        <th id="242">242</th>
+        <th id="243">243</th>
+        <th id="244">244</th>
+      </tr>
+      <tr>
+        <td id="succ_211">0</td>
+        <td id="succ_212">0</td>
+        <td id="succ_213">0</td>
+        <td id="succ_214">0</td>
+        <td id="succ_221">0</td>
+        <td id="succ_222">0</td>
+        <td id="succ_223">0</td>
+        <td id="succ_224">0</td>
+        <td id="succ_231">0</td>
+        <td id="succ_232">0</td>
+        <td id="succ_233">0</td>
+        <td id="succ_234">0</td>
+        <td id="succ_241">0</td>
+        <td id="succ_242">0</td>
+        <td id="succ_243">0</td>
+        <td id="succ_244">0</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th id="311">311</th>
+        <th id="312">312</th>
+        <th id="313">313</th>
+        <th id="314">314</th>
+        <th id="321">321</th>
+        <th id="322">322</th>
+        <th id="323">323</th>
+        <th id="324">324</th>
+        <th id="331">331</th>
+        <th id="332">332</th>
+        <th id="333">333</th>
+        <th id="334">334</th>
+        <th id="341">341</th>
+        <th id="342">342</th>
+        <th id="343">343</th>
+        <th id="344">344</th>
+      </tr>
+      <tr>
+        <td id="succ_311">0</td>
+        <td id="succ_312">0</td>
+        <td id="succ_313">0</td>
+        <td id="succ_314">0</td>
+        <td id="succ_321">0</td>
+        <td id="succ_322">0</td>
+        <td id="succ_323">0</td>
+        <td id="succ_324">0</td>
+        <td id="succ_331">0</td>
+        <td id="succ_332">0</td>
+        <td id="succ_333">0</td>
+        <td id="succ_334">0</td>
+        <td id="succ_341">0</td>
+        <td id="succ_342">0</td>
+        <td id="succ_343">0</td>
+        <td id="succ_344">0</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th id="411">411</th>
+        <th id="412">412</th>
+        <th id="413">413</th>
+        <th id="414">414</th>
+        <th id="421">421</th>
+        <th id="422">422</th>
+        <th id="423">423</th>
+        <th id="424">424</th>
+        <th id="431">431</th>
+        <th id="432">432</th>
+        <th id="433">433</th>
+        <th id="434">434</th>
+        <th id="441">441</th>
+        <th id="442">442</th>
+        <th id="443">443</th>
+        <th id="444">444</th>
+      </tr>
+      <tr>
+        <td id="succ_411">0</td>
+        <td id="succ_412">0</td>
+        <td id="succ_413">0</td>
+        <td id="succ_414">0</td>
+        <td id="succ_421">0</td>
+        <td id="succ_422">0</td>
+        <td id="succ_423">0</td>
+        <td id="succ_424">0</td>
+        <td id="succ_431">0</td>
+        <td id="succ_432">0</td>
+        <td id="succ_433">0</td>
+        <td id="succ_434">0</td>
+        <td id="succ_441">0</td>
+        <td id="succ_442">0</td>
+        <td id="succ_443">0</td>
+        <td id="succ_444">0</td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="progressChart">
+    <canvas id="tenChart" width="900px" height="300px"></canvas>
+  </section>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="js/scripts.js"></script>
+  </body>
+</html>

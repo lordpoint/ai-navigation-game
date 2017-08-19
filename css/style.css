@@ -1,0 +1,149 @@
+h1,h2,h3,h4,h5 {
+  margin: 0;
+  padding: 0;
+}
+
+table, th, td, tr {
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  width: 50px;
+}
+
+button:focus {
+  outline: none;
+}
+
+th {
+  padding-left: 27px;
+}
+
+td {
+  padding: 10px 0 10px 0;
+  text-align: center;
+  border: solid 1px #000;
+  background-color: #fff;
+  transition: 0.5s;
+}
+
+.scene {
+  width: 900px;
+  height: 400px;
+  background: url('../assets/space-bg.jpg') no-repeat;
+  background-size: cover;
+
+}
+
+.scene #trainingCountdown {
+  padding-top: 150px;
+  text-align: center;
+  color: #606060;
+}
+
+#ai {
+  position: absolute;
+  margin-left: 20px;
+  width: 100px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 0 30px 30px 0;
+}
+
+#asteroid {
+  position: absolute;
+  left: 800px;
+  width: 100px;
+  height: 100px;
+  top: 0px;
+  border-radius: 50%;
+  background-color: #c4a485;
+  background: url('../assets/asteroid.jpg') no-repeat;
+  background-size: 150%;
+  background-position: center;
+}
+
+.zone {
+  position: absolute;
+  opacity: 0;
+  width: 900px;
+  height: 100px;
+  color: #fff;
+  text-align: center;
+}
+
+.zone:nth-child(odd) {background-color: #ffd53f}
+.zone:nth-child(even) {background-color: #ff9b54}
+
+.zone_2 {margin-top: 100px}
+.zone_3 {margin-top: 200px}
+.zone_4 {margin-top: 300px}
+
+#stats {
+  height: 40px;
+  width: 900px;
+  background-color: #000;;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+#stats span {
+  padding-left: 50px;
+}
+
+#stats span:nth-child(1) {padding-left: 0px;}
+#stats span:nth-child(5) {float: right;}
+#stats span:nth-child(6) {float: right;}
+#stats span:nth-child(7) {float: right;}
+
+.controls {
+  padding: 20px 0 20px 20px;
+  width: 900px;
+}
+
+.controls span {
+  margin-left: 20px;
+}
+
+#startStop {
+  border: none;
+  background-color: #6a8bf7;
+  color: #fff;
+  border-radius: 4px;
+  padding: 7px 25px;
+}
+
+#showZones {
+  border: none;
+  background-color: #8e3ebc;
+  color: #fff;
+  border-radius: 4px;
+  padding: 7px 25px;
+}
+
+#chartToggle {
+  border: none;
+  background-color: #36bc67;
+  color: #fff;
+  border-radius: 4px;
+  padding: 7px 25px;
+}
+
+.data {
+  width: 900px;
+  height: 300px;
+  padding: 22px 0px;
+  background-color: #e5e5e5;
+  color: #595959;
+}
+
+.data table {
+  margin: 0 auto;
+}
+
+.progressChart {
+  display: none;
+  width: 900px;
+  height: 300px;
+}
